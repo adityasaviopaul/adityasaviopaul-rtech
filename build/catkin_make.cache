@@ -1,2 +1,2 @@
-beginner_tutorials
+beginner_tutorials:my_r2d2:r2d2_navigator
 -DCATKIN_DEVEL_PREFIX=/home/savio/adityasaviopaul-rtech/devel -DCMAKE_INSTALL_PREFIX=/home/savio/adityasaviopaul-rtech/install -G Unix Makefiles
