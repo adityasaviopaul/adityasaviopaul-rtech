@@ -9,13 +9,6 @@
   <xacro:property name="wheeldiam" value="0.07" />
   <xacro:property name="pi" value="3.1415" />
 
-  <xacro:property name="lens_radius" value="0.04" />
-  <xacro:property name="lens_length" value="-0.04"/>
-  <xacro:property name="lens_90" value="1.57"/>
-  <xacro:property name="Ox" value="0.04/2"/>
-  <xacro:property name="Oy" value="0"/>
-  <xacro:property name="Ox" value="0"/>  
-
   <material name="blue">
     <color rgba="0 0 0.8 1"/>
   </material>
@@ -242,65 +235,47 @@
     <origin xyz="${.707*width+0.04} 0 ${.707*width}"/>
   </joint>
 
-
-
-<!--Defining Lens Link and Joint -->
-
-<link name="black_lens">
+  <link name="black_lens">
     <visual>
       <geometry>
-        <cylinder radius="${lens_radius}" length="${lens_length}"/>
+        <cylinder length="0.01" radius="0.03"/>
       </geometry>
       <material name="black"/>
-	<origin xyz="0 0 0" rpy="0 ${pi/2} 0"/>
+	<origin rpy="0 ${pi/2} 0" xyz="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-        <cylinder radius="${lens_radius}" length="${lens_length}"/>
-    </geometry>
+        <cylinder length="0.01" radius="0.03"/>
+      </geometry>
     </collision>
-    <xacro:default_inertial mass="10"/>
+    <xacro:default_inertial mass="1"/>
   </link>
 
-<joint name="lensjoint" type="fixed">
+  <joint name="lensjoint" type="fixed">
     <parent link="box"/>
-    <child link="black_lens"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-   
+    <child link="lens"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
 
 
 
+    <link name="base_footprint">
+    </link>
 
-<!--Defining Base Footprint -->
-
-
-<link name="base_footprint"> </link>
-
- <joint name="from_base_joint" type="fixed">
+    <joint name="from_base_joint" type="fixed">
       <axis xyz="0 1 0" rpy="0 0 0" />
       <parent link="base_footprint"/>
       <child link="base_link"/>
-      <!--Shfiting the origin to base by a magnitude (Half of BodyLength + base height + wheel Dia)-->
-      <origin xyz="0 0 ${bodylen/2 + 0.1 + wheeldiam}" rpy="0 0 0"/>
+      <origin xyz="0 0 ${(bodylen/2)+0.1+wheeldiam}" rpy="0 0 0"/>
     </joint>
 
+  <link name="eye">
+  </link>
 
-
-<!--Defining EYE -->
-
-
-<link name="eye"> </link>
-
-
-<joint name="eyejoint" type="continuous">
+  <joint name="eyejoint" type="continuous">
     <parent link="black_lens"/>
     <child link="eye"/>
-    <origin xyz="0 0 0" rpy="1.57 3.14 1.57"/>
-   
+    <origin rpy="${pi/2} ${pi} ${pi/2}" xyz="0 0 0"/>
   </joint>
-
-
-
 
 </robot>

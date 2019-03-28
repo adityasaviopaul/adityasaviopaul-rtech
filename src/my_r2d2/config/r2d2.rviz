@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
         - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 769
   - Class: rviz/Selection
@@ -79,6 +80,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        eye:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         gripper_pole:
           Alpha: 1
           Show Axes: false
@@ -156,88 +161,32 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
-        All Enabled: true
-        base_footprint:
-          Value: true
-        base_link:
-          Value: true
-        black_lens:
-          Value: true
-        box:
-          Value: true
-        gripper_pole:
-          Value: true
-        head:
-          Value: true
-        left_back_wheel:
-          Value: true
-        left_base:
-          Value: true
-        left_front_wheel:
-          Value: true
-        left_gripper:
-          Value: true
-        left_leg:
-          Value: true
-        left_tip:
-          Value: true
-        odom:
-          Value: true
-        right_back_wheel:
-          Value: true
-        right_base:
-          Value: true
-        right_front_wheel:
-          Value: true
-        right_gripper:
-          Value: true
-        right_leg:
-          Value: true
-        right_tip:
-          Value: true
+        All Enabled: false
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
-        base_footprint:
-          base_link:
-            gripper_pole:
-              left_gripper:
-                left_tip:
-                  {}
-              right_gripper:
-                right_tip:
-                  {}
-            head:
-              box:
-                black_lens:
-                  {}
-            left_leg:
-              left_base:
-                left_back_wheel:
-                  {}
-                left_front_wheel:
-                  {}
-            right_leg:
-              right_base:
-                right_back_wheel:
-                  {}
-                right_front_wheel:
-                  {}
-        odom:
-          {}
+        {}
       Update Interval: 0
+      Value: false
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: visualization_marker
+      Name: Marker
+      Namespaces:
+        basic_shapes: true
+      Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -258,7 +207,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.3678751
+      Distance: 3.4558742
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -273,10 +222,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.440397233
+      Pitch: 0.275397748
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.283582658
+      Yaw: 2.53493857
     Saved: ~
 Window Geometry:
   Displays:
