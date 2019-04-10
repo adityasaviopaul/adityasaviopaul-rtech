@@ -365,6 +365,12 @@ r2d2_navigator_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/r2d2_na
 //Value Computed by CMake
 r2d2_navigator_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/r2d2_navigator
 
+//Value Computed by CMake
+range_visualizer_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/range_visualizer
+
+//Value Computed by CMake
+range_visualizer_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/range_visualizer
+
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
 
@@ -515,7 +521,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

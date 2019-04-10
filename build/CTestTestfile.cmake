@@ -7,4 +7,5 @@
 subdirs(gtest)
 subdirs(beginner_tutorials)
 subdirs(my_r2d2)
+subdirs(range_visualizer)
 subdirs(r2d2_navigator)

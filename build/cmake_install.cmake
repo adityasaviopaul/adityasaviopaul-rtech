@@ -119,6 +119,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/savio/adityasaviopaul-rtech/build/gtest/cmake_install.cmake")
   include("/home/savio/adityasaviopaul-rtech/build/beginner_tutorials/cmake_install.cmake")
   include("/home/savio/adityasaviopaul-rtech/build/my_r2d2/cmake_install.cmake")
+  include("/home/savio/adityasaviopaul-rtech/build/range_visualizer/cmake_install.cmake")
   include("/home/savio/adityasaviopaul-rtech/build/r2d2_navigator/cmake_install.cmake")
 
 endif()
