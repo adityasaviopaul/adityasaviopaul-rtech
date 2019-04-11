@@ -67,7 +67,7 @@ int main(int argc, char **argv)
 	std_msgs::Header header; 
 
 	sense.field_of_view=0.785;
-	sense.min_range = 0.22;
+	sense.min_range = 0.02;
 	sense.max_range = 4;
 	header.frame_id = "sensor_range";
 
