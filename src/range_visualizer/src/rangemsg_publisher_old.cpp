@@ -1,40 +1,8 @@
 #include "ros/ros.h"
-#include "std_msgs/String.h"
+//#include "std_msgs/String.h"
+
 #include "sensor_msgs/Range.h"
 #include <sstream>
-#include "ros/ros.h"
-#include "std_msgs/String.h"
-
-
-sensor_msgs::Range sense;
-//std_msgs::Header header; 
-
-
-
-         //std::stringstream ss;
-	//std::float ss;
-	//ss << rand() << count;
-	
-	//msg.data = ss.str();
-	//sense.range = ((float)rand()/RAND_MAX)*4;
-	//sense.range = ((float)rand()/RAND_MAX)*4;
-	//sense.header = header;
-  
-
-/**
- * This tutorial demonstrates simple receipt of messages over the ROS system.
- */
-void chatterCallback(sensor_msgs::Range sensormsg)
-{
-	sense.range=sensormsg.range
-	
-	//Apply Filter
-
-	ros::Publisher chatter_pub = n.advertise<sensor_msgs::Range>("ultrasonic/filtered", 1000);
-
-}
-
-
 
 /**
  * This tutorial demonstrates simple sending of messages over the ROS system.
@@ -51,8 +19,7 @@ int main(int argc, char **argv)
    * You must call one of the versions of ros::init() before using any other
    * part of the ROS system.
    */
-  ros::init(argc, argv, "rangemsg_publisher_listener");
-  
+  ros::init(argc, argv, "rangemsg_publisher");
 
   /**
    * NodeHandle is the main access point to communications with the ROS system.
@@ -78,14 +45,9 @@ int main(int argc, char **argv)
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
-  
-  ros::Rate loop_rate(10);
+  ros::Publisher chatter_pub = n.advertise<sensor_msgs::Range>("Range", 1000);
 
-	sense.range=0;
-	sense.field_of_view=0.785;
-	sense.min_range = 0.02;
-	sense.max_range = 4;
-	sense.header.frame_id = "sensor_range";
+  ros::Rate loop_rate(10);
 
   /**
    * A count of how many messages we have sent. This is used to create
@@ -100,7 +62,7 @@ int main(int argc, char **argv)
      */
 
     //std_msgs::String msg;
-/*
+
         sensor_msgs::Range sense;
 	std_msgs::Header header; 
 
@@ -111,17 +73,17 @@ int main(int argc, char **argv)
 
          //std::stringstream ss;
 	//std::float ss;
+    
 	//ss << rand() << count;
 	
 	//msg.data = ss.str();
-	//sense.range = ((float)rand()/RAND_MAX)*4;
 	sense.range = ((float)rand()/RAND_MAX)*4;
 	sense.header = header;
   
 	//ROS_INFO("%s", msg.data.c_str());
 	
 	//Rviz requires in float
-*/	ROS_INFO("%f",sense.range);
+	ROS_INFO("%f",sense.range);
 
     /**
      * The publish() function is how you send messages. The parameter
@@ -130,8 +92,6 @@ int main(int argc, char **argv)
      * in the constructor above.
      */
     chatter_pub.publish(sense);
-    
-	ros::Subscriber sub = n.subscribe("ultrasonic/raw", 1000, chatterCallback);
 
     ros::spinOnce();
 

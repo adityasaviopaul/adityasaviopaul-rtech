@@ -60,6 +60,7 @@ range_visualizer/CMakeFiles/rangemsg_publisher.dir/src/rangemsg_publisher.cpp.o:
 range_visualizer/CMakeFiles/rangemsg_publisher.dir/src/rangemsg_publisher.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 range_visualizer/CMakeFiles/rangemsg_publisher.dir/src/rangemsg_publisher.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Range.h
 range_visualizer/CMakeFiles/rangemsg_publisher.dir/src/rangemsg_publisher.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+range_visualizer/CMakeFiles/rangemsg_publisher.dir/src/rangemsg_publisher.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 range_visualizer/CMakeFiles/rangemsg_publisher.dir/src/rangemsg_publisher.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 range_visualizer/CMakeFiles/rangemsg_publisher.dir/src/rangemsg_publisher.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
