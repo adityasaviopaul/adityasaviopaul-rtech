@@ -1,3 +1,10 @@
+/* This node acts as a subscriber and publisher, both
+Subscriber : with the subscriber name sub_range, it subscribes to the topic ultrasonic/raw which is published by the arduino code of the sensor data from the ultrasonic sensor as raw data
+Publisher  : once the subscriber receives the message, it calls a callback function named chattercallback that defines a variable sensormsg of message type range in the ROS Package, sensor_msgs
+We then apply a filter(mean, low pass, band pass) to the received data and advertises the same under the Topic named ultrasonic/filtered.
+the messages are then published under the topic ultrasonic/filtered to be eventually visualised in the RVIZ.
+*/
+
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "sensor_msgs/Range.h"
@@ -5,32 +12,49 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 
-
+//Global Variable Definition for Data Type Range of name sense in the ROS Package sensor_msgs
 sensor_msgs::Range sense;
-//std_msgs::Header header; 
-
-
-
-         //std::stringstream ss;
-	//std::float ss;
-	//ss << rand() << count;
-	
-	//msg.data = ss.str();
-	//sense.range = ((float)rand()/RAND_MAX)*4;
-	//sense.range = ((float)rand()/RAND_MAX)*4;
-	//sense.header = header;
-  
 
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
  */
 void chatterCallback(sensor_msgs::Range sensormsg)
 {
-	sense.range=sensormsg.range
-	
-	//Apply Filter
+	//Declaring Variables
 
-	ros::Publisher chatter_pub = n.advertise<sensor_msgs::Range>("ultrasonic/filtered", 1000);
+	threshold = 100 //Threshold for Low Pass Filter
+	bp_high   = 100   // Upper Limit for BandPass Filter
+	bp_low    =0	// Lower Limit of Band Pass Filter
+
+	
+
+	//Mean Filter
+	sense.range = sensormsg.range/2;
+
+	//sense.range=sensormsg.range
+	//Low Pass Filter
+/*	if (sense.range < threshold)
+	{
+	sense.range = sensormsg.range;  
+	}
+	else
+	{
+	sense.range = 100;
+	}
+
+
+	//BandPass Filter
+	if (sense.range > bp_low && sense.range < bp_high)
+	{
+	sense.range = sensormsg.range;  
+	}
+	else
+	{
+	sense.range = 100;
+	}	
+*/
+		
+	
 
 }
 
@@ -87,6 +111,35 @@ int main(int argc, char **argv)
 	sense.max_range = 4;
 	sense.header.frame_id = "sensor_range";
 
+ /**
+     * The publish() function is how you send messages. The parameter
+     * is the message object. The type of this object must agree with the type
+     * given as a template parameter to the advertise<>() call, as was done
+     * in the constructor above.
+
+/**
+   * The subscribe() call is how you tell ROS that you want to receive messages
+   * on a given topic.  This invokes a call to the ROS
+   * master node, which keeps a registry of who is publishing and who
+   * is subscribing.  Messages are passed to a callback function, here
+   * called chatterCallback.  subscribe() returns a Subscriber object that you
+   * must hold on to until you want to unsubscribe.  When all copies of the Subscriber
+   * object go out of scope, this callback will automatically be unsubscribed from
+   * this topic.
+   *
+   * The second parameter to the subscribe() function is the size of the message
+   * queue.  If messages are arriving faster than they are being processed, this
+   * is the number of messages that will be buffered up before beginning to throw
+   * away the oldest ones.
+     */
+   
+
+	ros::Subscriber sub_range = n.subscribe("ultrasonic/raw", 1000, chatterCallback);
+	//The Subscriber 
+	ros::Publisher  chatter_pub_filtered = n.advertise<sensor_msgs::Range>("ultrasonic/filtered", 1000);
+	//The Publisher is declared with a name 'chatter_pub' which advertise a Message Type of Range in the Ros Package, Sensor_msgs on a topic named ultrasonic/filtered with a buffer of 1000
+
+
   /**
    * A count of how many messages we have sent. This is used to create
    * a unique string for each message.
@@ -128,11 +181,25 @@ int main(int argc, char **argv)
      * is the message object. The type of this object must agree with the type
      * given as a template parameter to the advertise<>() call, as was done
      * in the constructor above.
-     */
-    chatter_pub.publish(sense);
-    
-	ros::Subscriber sub = n.subscribe("ultrasonic/raw", 1000, chatterCallback);
 
+/**
+   * The subscribe() call is how you tell ROS that you want to receive messages
+   * on a given topic.  This invokes a call to the ROS
+   * master node, which keeps a registry of who is publishing and who
+   * is subscribing.  Messages are passed to a callback function, here
+   * called chatterCallback.  subscribe() returns a Subscriber object that you
+   * must hold on to until you want to unsubscribe.  When all copies of the Subscriber
+   * object go out of scope, this callback will automatically be unsubscribed from
+   * this topic.
+   *
+   * The second parameter to the subscribe() function is the size of the message
+   * queue.  If messages are arriving faster than they are being processed, this
+   * is the number of messages that will be buffered up before beginning to throw
+   * away the oldest ones.
+     */
+    chatter_pub_filtered.publish(sense);
+    
+	
     ros::spinOnce();
 
     loop_rate.sleep();
