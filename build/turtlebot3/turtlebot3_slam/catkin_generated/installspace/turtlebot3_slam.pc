@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/install
+
+Name: turtlebot3_slam
+Description: Description of turtlebot3_slam
+Version: 1.2.0
+Cflags: -I/home/savio/adityasaviopaul-rtech/install/include
+Libs: -L/home/savio/adityasaviopaul-rtech/install/lib 
+Requires: roscpp sensor_msgs
