@@ -22,9 +22,9 @@ void chatterCallback(sensor_msgs::Range sensormsg)
 {
 	//Declaring Variables
 
-	threshold = 100 //Threshold for Low Pass Filter
-	bp_high   = 100   // Upper Limit for BandPass Filter
-	bp_low    =0	// Lower Limit of Band Pass Filter
+	int threshold=100; //Threshold for Low Pass Filter
+	int bp_high=100;   // Upper Limit for BandPass Filter
+	int bp_low=0;	// Lower Limit of Band Pass Filter
 
 	
 
@@ -109,7 +109,7 @@ int main(int argc, char **argv)
 	sense.field_of_view=0.785;
 	sense.min_range = 0.02;
 	sense.max_range = 4;
-	sense.header.frame_id = "sensor_range";
+	sense.header.frame_id = "ultrasonicmodule";
 
  /**
      * The publish() function is how you send messages. The parameter
