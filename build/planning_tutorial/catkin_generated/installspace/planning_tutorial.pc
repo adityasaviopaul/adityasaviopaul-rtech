@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/install
+
+Name: planning_tutorial
+Description: Description of planning_tutorial
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/install/lib 
+Requires: 
