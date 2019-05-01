@@ -83,7 +83,7 @@ int main(int argc, char** argv)
   // The package MoveItVisualTools provides many capabilties for visualizing objects, robots,
   // and trajectories in RViz as well as debugging tools such as step-by-step introspection of a script
   namespace rvt = rviz_visual_tools;
-  moveit_visual_tools::MoveItVisualTools visual_tools("panda_link0");
+  moveit_visual_tools::MoveItVisualTools visual_tools("tool0");
   visual_tools.deleteAllMarkers();
 
   // Remote control is an introspection tool that allows users to step through a high level script
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
 
   // Start the demo
   // ^^^^^^^^^^^^^^^^^^^^^^^^^
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to start the demo");
+  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to Start the Triangle Manipulation");
 
   // Planning to a Pose goal
   // ^^^^^^^^^^^^^^^^^^^^^^^
@@ -254,6 +254,8 @@ int main(int argc, char** argv)
   waypoints.push_back(target_pose3);
 
 
+// ________________________Basic Triangle________________________//
+
   target_pose3.position.z -= 0.2;
   target_pose3.position.y += 0.2;
 
@@ -269,6 +271,43 @@ int main(int argc, char** argv)
   //target_pose3.position.x -= 0.2;
   waypoints.push_back(target_pose3);  // up and left
 
+//______________________________________________________________//
+
+
+//_______________________________RealLife Problem_______________//
+
+/*  target_pose3.position.z += 0.2;
+  					//target_pose3.position.y += 0.2;
+
+  
+  waypoints.push_back(target_pose3);  // up
+
+  target_pose3.position.z += 0.4;  
+  target_pose3.position.y += 0.4;
+  waypoints.push_back(target_pose3);  // up and right
+
+  target_pose3.position.z -= 0.2;
+  target_pose3.position.y += 0.2;
+  waypoints.push_back(target_pose3);  // down and right
+   
+  target_pose3.position.y -= 0.2;
+  waypoints.push_back(target_pose3);  // left
+  
+  target_pose3.position.z -= 0.2;
+  target_pose3.position.y += 0.2;
+  waypoints.push_back(target_pose3);  // down and right
+
+  target_pose3.position.z += 0.2;
+  waypoints.push_back(target_pose3);  // up
+
+  target_pose3.position.z -= 0.2;
+  target_pose3.position.y -= 0.2;
+  waypoints.push_back(target_pose3);  // down and left
+
+  
+  target_pose3.position.y += 0.2;
+  waypoints.push_back(target_pose3);  // right */
+
   // Cartesian motions are frequently needed to be slower for actions such as approach and retreat
   // grasp motions. Here we demonstrate how to reduce the speed of the robot arm via a scaling factor
   // of the maxiumum speed of each joint. Note this is not the speed of the end effector point.
@@ -283,7 +322,7 @@ int main(int argc, char** argv)
   const double jump_threshold = 0.0;
   const double eef_step = 0.01;
   double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
-  ROS_INFO_NAMED("tutorial", "Visualizing plan 4 (Cartesian path) (%.2f%% acheived)", fraction * 100.0);
+  ROS_INFO_NAMED("tutorial", "Visualizing plan 4 (Cartesian path) (%.2f%% achieved)", fraction * 100.0);
 
   // Visualize the plan in RViz
   visual_tools.deleteAllMarkers();
