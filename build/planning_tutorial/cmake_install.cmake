@@ -47,3 +47,18 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/planning_tutorial" TYPE FILE FILES "/home/savio/adityasaviopaul-rtech/src/planning_tutorial/package.xml")
 endif()
 
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/savio/adityasaviopaul-rtech/build/planning_tutorial/catkin_generated/installspace/planning_tutorial.pc")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/planning_tutorial/cmake" TYPE FILE FILES
+    "/home/savio/adityasaviopaul-rtech/build/planning_tutorial/catkin_generated/installspace/planning_tutorialConfig.cmake"
+    "/home/savio/adityasaviopaul-rtech/build/planning_tutorial/catkin_generated/installspace/planning_tutorialConfig-version.cmake"
+    )
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/planning_tutorial" TYPE FILE FILES "/home/savio/adityasaviopaul-rtech/src/planning_tutorial/package.xml")
+endif()
+

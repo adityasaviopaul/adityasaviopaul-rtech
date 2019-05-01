@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/devel
+
+Name: motoman_msgs
+Description: Description of motoman_msgs
+Version: 0.3.5
+Cflags: -I/home/savio/adityasaviopaul-rtech/devel/include
+Libs: -L/home/savio/adityasaviopaul-rtech/devel/lib 
+Requires: industrial_msgs message_runtime std_msgs trajectory_msgs
