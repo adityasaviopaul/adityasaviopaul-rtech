@@ -2721,6 +2721,24 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory dual_manipulator_support
+
+# Convenience name for "all" pass in the directory.
+dual_manipulator_support/all:
+
+.PHONY : dual_manipulator_support/all
+
+# Convenience name for "clean" pass in the directory.
+dual_manipulator_support/clean:
+
+.PHONY : dual_manipulator_support/clean
+
+# Convenience name for "preinstall" pass in the directory.
+dual_manipulator_support/preinstall:
+
+.PHONY : dual_manipulator_support/preinstall
+
+#=============================================================================
 # Directory level rules for directory my_r2d2
 
 # Convenience name for "all" pass in the directory.
