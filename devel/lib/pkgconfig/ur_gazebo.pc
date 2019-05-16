@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/devel
+
+Name: ur_gazebo
+Description: Description of ur_gazebo
+Version: 1.2.5
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/devel/lib 
+Requires: 

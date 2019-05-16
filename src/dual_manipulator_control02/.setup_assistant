@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/savio/Downloads/dual_sia5_ur5.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/motoman_sia5d.srdf
+  CONFIG:
+    author_name: Aditya Savio Paul
+    author_email: aditya.savio23@gmail.com
+    generated_timestamp: 1557680254

@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/install
+
+Name: ur_driver
+Description: Description of ur_driver
+Version: 1.2.5
+Cflags: -I/home/savio/adityasaviopaul-rtech/install/include
+Libs: -L/home/savio/adityasaviopaul-rtech/install/lib 
+Requires: dynamic_reconfigure

@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/devel
+
+Name: dual_manipulator_control
+Description: Description of dual_manipulator_control
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/devel/lib 
+Requires: 

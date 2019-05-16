@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/install
+
+Name: ur_msgs
+Description: Description of ur_msgs
+Version: 1.2.5
+Cflags: -I/home/savio/adityasaviopaul-rtech/install/include
+Libs: -L/home/savio/adityasaviopaul-rtech/install/lib 
+Requires: message_runtime std_msgs
