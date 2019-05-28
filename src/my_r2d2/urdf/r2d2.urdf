@@ -61,6 +61,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
   </link>
+
   <joint name="right_front_wheel_joint" type="continuous">
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <parent link="right_base"/>
