@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/install
+
+Name: dual_manipulator_motion_control
+Description: Description of dual_manipulator_motion_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/install/lib 
+Requires: 

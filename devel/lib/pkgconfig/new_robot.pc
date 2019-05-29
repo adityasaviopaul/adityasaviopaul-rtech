@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/devel
+
+Name: new_robot
+Description: Description of new_robot
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/devel/lib 
+Requires: 
