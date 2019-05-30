@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/install
+
+Name: HELLO_MANIPULATOR
+Description: Description of HELLO_MANIPULATOR
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/install/lib 
+Requires: 

@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="5_wheeled_robot"> 
+<xacro:property name="wheel_radius" value="0.08"/>
+<xacro:property name="wheel_length" value="0.1"/>
+<xacro:property name="bottom_box_length" value="1"/>
+<xacro:property name="bottom_box_height" value="0.3"/>
+<xacro:property name="upper_box_length" value="0.5"/>
+<xacro:property name="upper_box_height" value="0.3"/>
+ <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+<material name="black">
+    <color rgba="0 0 0 0"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+<link name="base_link">
+    <visual>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="${bottom_box_length} ${bottom_box_length} ${bottom_box_height}"/>
+      </geometry>
+	<material name="blue"/>
+    </visual>
+ <collision>
+     <geometry>
+        <box size="${bottom_box_length} ${bottom_box_length} ${bottom_box_height}"/>
+     </geometry>
+    </collision>
+  </link>
+
+  <link name="box">
+  <visual>
+   <geometry>
+        <box size="${upper_box_length} ${upper_box_length} ${upper_box_height}"/>
+      </geometry>
+	<material name="white"/>
+    </visual>
+    <collision>
+     <geometry>
+        <box size="${upper_box_length} ${upper_box_length} ${upper_box_height}"/>
+     </geometry>
+    </collision>
+  </link>
+<link name="base_footprint">
+</link>
+  <link name="wheel1">
+      <visual>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+	<material name="white"/>
+    </visual>
+    <collision>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+    </collision>
+  </link>
+
+
+    <link name="wheel2">
+   <visual>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+	<material name="white"/>
+    </visual>
+    <collision>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+    </collision>
+  </link>
+
+ <link name="wheel3">
+      <visual>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+	<material name="white"/>
+    </visual>
+    <collision>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+    </collision>
+  </link>
+
+ <link name="wheel4">
+      <visual>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+	<material name="white"/>
+    </visual>
+    <collision>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+    </collision>
+  </link>
+
+ <link name="wheel5">
+      <visual>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+	<material name="white"/>
+    </visual>
+    <collision>
+     <geometry>
+       <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+     </geometry>
+    </collision>
+  </link>
+
+
+
+
+ <joint name="base_to_box" type="fixed">
+    <parent link="base_link"/>
+    <child link="box"/>
+    <origin xyz="0 0 ${bottom_box_height/2}" rpy="0 0 0"/>
+
+  </joint>
+   <joint name="base_to_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel1"/>
+   <origin xyz="0 0 ${-(bottom_box_height/2 + wheel_radius)}" rpy="0 -1.57 0"/>
+
+  </joint>
+
+  <joint name="base_to_wheel2" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel2"/>
+   <origin xyz="${bottom_box_length/2 - wheel_radius} ${bottom_box_length/2 -wheel_radius} ${-(bottom_box_height/2 + wheel_radius)}" rpy="0 -1.57 0"/>
+  </joint>
+
+<joint name="base_to_wheel3" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel3"/>
+   <origin xyz="${bottom_box_length/2 - wheel_radius} ${-(bottom_box_length/2 - wheel_radius)} ${-(bottom_box_height/2 + wheel_radius)}" rpy="0 -1.57 0"/>
+  </joint>
+<joint name="base_to_wheel4" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel4"/>
+   <origin xyz="${-(bottom_box_length/2 - wheel_radius)} ${bottom_box_length/2 - wheel_radius} ${-(bottom_box_height/2 + wheel_radius)}" rpy="0 -1.57 0"/>
+  </joint>
+<joint name="base_to_wheel5" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel5"/>
+   <origin xyz="${-(bottom_box_length/2 - wheel_radius)} ${-(bottom_box_length/2 - wheel_radius)} ${-(bottom_box_height/2 + wheel_radius)}" rpy="0 -1.57 0"/>
+  </joint>
+
+   <joint name="base_foot_to_base" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+   <origin xyz="0 0 ${bottom_box_height/2 + wheel_radius*2}" rpy="0 0 0"/>
+  </joint>
+</robot>

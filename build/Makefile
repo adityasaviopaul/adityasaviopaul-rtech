@@ -2597,6 +2597,32 @@ robotmanipulator/fast:
 .PHONY : robotmanipulator/fast
 
 #=============================================================================
+# Target rules for targets named robot_move
+
+# Build rule for target.
+robot_move: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_move
+.PHONY : robot_move
+
+# fast build rule for target.
+robot_move/fast:
+	$(MAKE) -f robot_dual_motion_prexam/CMakeFiles/robot_move.dir/build.make robot_dual_motion_prexam/CMakeFiles/robot_move.dir/build
+.PHONY : robot_move/fast
+
+#=============================================================================
+# Target rules for targets named move_robot
+
+# Build rule for target.
+move_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_robot
+.PHONY : move_robot
+
+# fast build rule for target.
+move_robot/fast:
+	$(MAKE) -f robot_move_prexam/CMakeFiles/move_robot.dir/build.make robot_move_prexam/CMakeFiles/move_robot.dir/build
+.PHONY : move_robot/fast
+
+#=============================================================================
 # Target rules for targets named run_tests_motoman_gp12_support_roslaunch-check
 
 # Build rule for target.
@@ -5175,6 +5201,8 @@ help:
 	@echo "... topic_tools_generate_messages_nodejs"
 	@echo "... move"
 	@echo "... robotmanipulator"
+	@echo "... robot_move"
+	@echo "... move_robot"
 	@echo "... run_tests_motoman_gp12_support_roslaunch-check"
 	@echo "... run_tests_motoman_gp12_support"
 	@echo "... _run_tests_motoman_gp12_support"

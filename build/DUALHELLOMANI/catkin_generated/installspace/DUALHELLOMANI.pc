@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/install
+
+Name: DUALHELLOMANI
+Description: Description of DUALHELLOMANI
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/install/lib 
+Requires: 

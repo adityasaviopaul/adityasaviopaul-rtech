@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: dual_manipulator_control
+    relative_path: dual_sia5.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/motoman_sia5d.srdf
+  CONFIG:
+    author_name: asp
+    author_email: asp.def@gmail.com
+    generated_timestamp: 1559174790

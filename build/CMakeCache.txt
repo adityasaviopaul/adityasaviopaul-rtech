@@ -268,6 +268,12 @@ DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
 //Doxygen found
 DOXYGEN_FOUND:BOOL=TRUE
 
+//Value Computed by CMake
+DUALHELLOMANI_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/DUALHELLOMANI
+
+//Value Computed by CMake
+DUALHELLOMANI_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/DUALHELLOMANI
+
 //Path to a program.
 EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 
@@ -294,6 +300,18 @@ GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
 
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
+
+//Value Computed by CMake
+HELLO_MANIPULATOR_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/HELLO_MANIPULATOR
+
+//Value Computed by CMake
+HELLO_MANIPULATOR_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/HELLO_MANIPULATOR
+
+//Value Computed by CMake
+HELLO_MANI_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/HELLO_MANI
+
+//Value Computed by CMake
+HELLO_MANI_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/HELLO_MANI
 
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
@@ -1016,6 +1034,24 @@ range_visualizer_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/range
 //Value Computed by CMake
 range_visualizer_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/range_visualizer
 
+//Value Computed by CMake
+robot_dual_motion_prexam_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/robot_dual_motion_prexam
+
+//Value Computed by CMake
+robot_dual_motion_prexam_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/robot_dual_motion_prexam
+
+//Value Computed by CMake
+robot_dual_prexam_move_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/robot_dual_prexam_move
+
+//Value Computed by CMake
+robot_dual_prexam_move_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/robot_dual_prexam_move
+
+//Value Computed by CMake
+robot_move_prexam_BINARY_DIR:STATIC=/home/savio/adityasaviopaul-rtech/build/robot_move_prexam
+
+//Value Computed by CMake
+robot_move_prexam_SOURCE_DIR:STATIC=/home/savio/adityasaviopaul-rtech/src/robot_move_prexam
+
 //The directory containing a CMake configuration file for rosbag.
 rosbag_DIR:PATH=/opt/ros/kinetic/share/rosbag/cmake
 
@@ -1469,7 +1505,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=63
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=67
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

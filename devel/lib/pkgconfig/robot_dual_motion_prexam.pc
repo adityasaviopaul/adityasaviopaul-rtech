@@ -1,0 +1,8 @@
+prefix=/home/savio/adityasaviopaul-rtech/devel
+
+Name: robot_dual_motion_prexam
+Description: Description of robot_dual_motion_prexam
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/savio/adityasaviopaul-rtech/devel/lib 
+Requires: 
