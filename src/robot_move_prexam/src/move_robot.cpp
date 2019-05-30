@@ -66,7 +66,7 @@ while (ros::ok())
 std_msgs::Float32 msg;
 
 msg.data.x = 15.0;
-msg.data.y = 16.0;c
+msg.data.y = 16.0;
 
 pub.publish(msg);
 

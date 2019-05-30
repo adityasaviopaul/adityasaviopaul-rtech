@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/savio/adityasaviopaul-rtech/src/rt_exam_mvp/src/rt_move_robot.cpp
+ros/ros.h
+/home/savio/adityasaviopaul-rtech/src/rt_exam_mvp/src/ros/ros.h
+geometry_msgs/Twist.h
+/home/savio/adityasaviopaul-rtech/src/rt_exam_mvp/src/geometry_msgs/Twist.h
+sstream
+-
+ros/ros.h
+/home/savio/adityasaviopaul-rtech/src/rt_exam_mvp/src/ros/ros.h
+std_msgs/Float32.h
+/home/savio/adityasaviopaul-rtech/src/rt_exam_mvp/src/std_msgs/Float32.h
+stdio.h
+-
+sstream
+-
+iostream
+-
+std_msgs/String.h
+/home/savio/adityasaviopaul-rtech/src/rt_exam_mvp/src/std_msgs/String.h
+
